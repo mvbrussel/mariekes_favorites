@@ -4,19 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Favorites</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Your Site Title</title>
+
+    <!-- Add a style section for CSS -->
+    <style>
+        /* Style for the container */
+        .favorites-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for clickable images */
+        .favorites-container img {
+            width: 200px;
+            /* Set the desired width */
+            height: auto;
+            /* Maintain aspect ratio */
+            border: 1px solid #ccc;
+            /* Optional: Add a border for better visibility */
+            margin-right: 10px;
+            /* Optional: Add margin for spacing between image and text */
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Your Name's Favorites</h1>
-        <ul>
-            <li><strong>Favorite Artist:</strong> Artist Name</li>
-            <li><strong>Favorite Song:</strong> Song Name</li>
-            <li><strong>Favorite Set:</strong> Set Name</li>
-        </ul>
+    <!-- Container for the image and text -->
+    <div class="favorites-container">
+        <!-- Clickable image -->
+        <a href="https://example.com/page1" target="_blank">
+            <img src="soundcloud_logo.png" alt="Screenshot 1">
+        </a>
+
+        <!-- Text "Your Name's Favorites" -->
+        <h1>Marieke's Favorites</h1>
     </div>
+
+    <ul class="favorites-list">
+        <li>All-time favorite artist: Loyle Carner</li>
+        <li>Favorite song: Speed of Plight</li>
+        <li>Best childhood memory: Space Oddity</li>
+        <li>Best dj set: Hunee Boiler room</li>
+    </ul>
+
+    <!-- Your HTML content goes here -->
 </body>
 
 </html>
