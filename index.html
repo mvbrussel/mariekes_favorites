@@ -9,22 +9,113 @@
 
     <!-- Add a style section for CSS -->
     <style>
-        /* Style for the container */
-        .favorites-container {
-            display: flex;
-            align-items: center;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
 
-        /* Style for clickable images */
+        /* Style for clickable images in the favorites container */
+        .favorites-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            /* Align to the left */
+            margin-bottom: 20px;
+            margin-left: 20px;
+            /* Add margin to the left */
+        }
+
         .favorites-container img {
-            width: 200px;
-            /* Set the desired width */
+            width: 20%;
+            /* Make the width auto */
+            max-width: 100%;
+            align-items: center;
+            /* Set max-width to 100% to prevent overflow */
+            height: auto;
+            /* Maintain aspect ratio */
+            border: none;
+            /* Remove border */
+            margin-bottom: -5px;
+
+            /* Optional: Add margin for spacing between image and text */
+        }
+
+        /* Style for artist image */
+        .artist-container img {
+            width: 100%;
+            /* Set the width to 100% to span the whole width */
             height: auto;
             /* Maintain aspect ratio */
             border: 1px solid #ccc;
             /* Optional: Add a border for better visibility */
-            margin-right: 10px;
-            /* Optional: Add margin for spacing between image and text */
+        }
+
+        /* Style for the favorite artist box */
+        .favorite-box {
+            background-color: #fff;
+            /* White background */
+            border: 2px solid #ff8800;
+            /* Orange border */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            /* Adjust margin as needed */
+            border-radius: 10px;
+            /* Soft (round-like) corners */
+            width: calc(33.33% - 20px);
+            /* Adjusted to 33.33% to fit three boxes on the same row with spacing */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style for text inside the favorite artist box */
+        .favorite-box h2 {
+            color: #ff8800;
+            /* Orange text for the border color */
+            margin-top: auto;
+            /* Align to the bottom */
+            margin-bottom: 10px;
+            font-size: 100%;
+            /* Set font size to 100% */
+        }
+
+        /* Left-aligned artist image inside the favorite artist box */
+        .favorite-box .artist-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 10px;
+            /* Add margin for spacing between image and text */
+        }
+
+        /* Enlarge the images on the second row */
+        .favorite-box-container .favorite-box:nth-child(4) img,
+        .favorite-box-container .favorite-box:nth-child(5) img,
+        .favorite-box-container .favorite-box:nth-child(6) img,
+        .favorite-box-container .favorite-box:nth-child(7) img,
+        .favorite-box-container .favorite-box:nth-child(8) img,
+        .favorite-box-container .favorite-box:nth-child(9) img {
+            width: 100%;
+            /* Span the whole width */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        /* Container for the favorite boxes */
+        .favorite-box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        /* Hyperlink style */
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -33,22 +124,124 @@
     <!-- Container for the image and text -->
     <div class="favorites-container">
         <!-- Clickable image -->
-        <a href="https://example.com/page1" target="_blank">
-            <img src="soundcloud_logo.png" alt="Screenshot 1">
+        <a href="https://soundcloud.com/mariekevanbrussel" target="_blank">
+            <img src="soundcloud_logo_02.png" alt="Screenshot 1">
         </a>
 
         <!-- Text "Your Name's Favorites" -->
-        <h1>Marieke's Favorites</h1>
+        <h1 style="color: #ff8800; margin: 0;">Marieke's Favorites</h1>
     </div>
 
-    <ul class="favorites-list">
-        <li>All-time favorite artist: Loyle Carner</li>
-        <li>Favorite song: Speed of Plight</li>
-        <li>Best childhood memory: Space Oddity</li>
-        <li>Best dj set: Hunee Boiler room</li>
-    </ul>
+    <!-- Container for the favorite boxes -->
+    <div class="favorite-box-container">
+        <!-- First box -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/loyle-carner" target="_blank">
+                <h2 style="font-size: 100%;">Favorite artist</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="loyle_carner_02.png" alt="Favorite artist">
+                </div>
+            </a>
+        </div>
+
+        <!-- Second box -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/hunee" target="_blank">
+                <h2 style="font-size: 100%;">Favorite DJ</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="hunee_02.png" alt="Favorite DJ">
+                </div>
+            </a>
+        </div>
+
+        <!-- Third box -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/de-jeugd-van-tegenwoordig" target="_blank">
+                <h2 style="font-size: 100%;">Favorite Dutch artist</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="de_jeugd_van_tegenwoordig_02.png" alt="Favorite Dutch artist">
+                </div>
+            </a>
+        </div>
+
+        <!-- First box in the second row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/miksumacloud/nachts-wach" target="_blank">
+                <h2 style="font-size: 100%;">Current favorite song</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="nachts_wach_02.png" alt="Current favorite song">
+                </div>
+            </a>
+        </div>
+
+        <!-- Second box in the second row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/paolo-nutini/iron-sky" target="_blank">
+                <h2 style="font-size: 100%;">All-time favorite song</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="iron_sky_02.png" alt="All-time favorite song">
+                </div>
+            </a>
+        </div>
+
+        <!-- Third box in the second row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/tjadedj/froukje-een-teken-tjade-remix-1" target="_blank">
+                <h2 style="font-size: 100%;">Favorite Dutch song</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="een_teken.png" alt="Favorite Dutch song">
+                </div>
+            </a>
+        </div>
+
+        <!-- First box in the third row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/platform/hunee" target="_blank">
+                <h2 style="font-size: 100%;">Favorite DJ set</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="hunee_dekmantel_set.png" alt="Favorite DJ set">
+                </div>
+            </a>
+        </div>
+
+        <!-- Second box in the third row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/dkmntl/sets/recordings-lente-kabinet-1" target="_blank">
+                <h2 style="font-size: 100%;">Favorite festival</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="lente_kabinet_2023.png" alt="Favorite festival">
+                </div>
+            </a>
+        </div>
+
+        <!-- Third box in the third row -->
+        <div class="favorite-box">
+            <a href="https://soundcloud.com/meltfestival/sets/melt-festival-17-19-juli-2015" target="_blank">
+                <h2 style="font-size: 100%;">First ever festival</h2>
+                <!-- Left-aligned image -->
+                <div class="artist-container">
+                    <img src="melt_2015.png" alt="First ever festival">
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- Your HTML content goes here -->
+
+    <!-- Small text at the bottom of the page -->
+    <div style="text-align: center; margin-top: 20px;">
+        <p style="font-style: italic; color: #888;">by Marieke for SoundCloud</p>
+    </div>
+
+
 </body>
 
 </html>
